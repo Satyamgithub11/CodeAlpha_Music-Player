@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Roboto', sans-serif;
+    color: #f5f5f5;
+}
+
+#bars {
+    display: none;
+}
+
+#title {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+    padding: 10px 0;
+    font-style: italic;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.playlists {
+    width: 300px;
+    background: #1e272e;
+    height: 100vh;
+    position: fixed;
+    text-transform: capitalize;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.playlists ul {
+    margin-top: 10px;
+}
+
+.song {
+    list-style: none;
+    color: #dcdde1;
+    margin-bottom: 1px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 15px;
+    display: block;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+li:hover {
+    background: #576574;
+    transform: translateX(10px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#progress {
+    height: 5px;
+    display: block;
+    margin-top: 5px;
+    width: 40vw;
+}
+
+.access-control {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.access-control button {
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    background: none;
+    transition: transform 0.3s, color 0.3s;
+    color: #f5f5f5;
+}
+
+.access-control button:active {
+    color: #1abc9c;
+}
+
+.access-control .media i {
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s, color 0.3s;
+}
+
+#play {
+    background-color: #e74c3c;
+    padding-left: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+#pause {
+    display: none;
+    background: #e74c3c;
+    border-radius: 50%;
+    padding: 0 1.6px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+#play:hover, #pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #c0392b;
+}
+
+.main {
+    width: calc(100vw - 300px);
+    left: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.music-element {
+    width: 40vw;
+}
+
+.volume-control i {
+    font-size: 1.5rem;
+}
+
+img {
+    width: 40vw;
+    height: 45vh;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.addClass {
+    background: #576574;
+}
+
+.run-time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#song-name {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.493);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#song-name:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#volume {
+    width: 100px;
+}
+
+#volume-access {
+    margin-right: 0;
+}
+
+#repeat {
+    margin-left: 10px;
+}
+
+.repeat-active {
+    color: #1abc9c;
+}
+
+@media screen and (max-width: 800px) {
+    #bars {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        font-size: 25px;
+        background: none;
+        border: none;
+        outline: none;
+        display: block;
+    }
+
+    #bars:active {
+        color: blue;
+    }
+
+    .song {
+        font-size: 15px;
+    }
+
+    .playlists {
+        width: 200px;
+        z-index: 1;
+        background: rgba(30, 39, 46, 0.9);
+    }
+
+    .togglePlaylist {
+        display: none;
+    }
+
+    .main {
+        left: 0;
+        margin: auto;
+        width: 70vw;
+    }
+
+    .music-element {
+        width: 70vw;
+    }
+
+    #song-name {
+        width: 70vw;
+    }
+
+    img {
+        width: 70vw;
+    }
+
+    #progress {
+        width: 70vw;
+    }
+
+    #song-name {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .access-control .media i {
+        font-size: 15px;
+    }
+
+    .volume-control i {
+        font-size: 18px;
+    }
+
+    img {
+        height: 30vh;
+    }
+
+    .access-control button {
+        margin-right: 10px;
+    }
+
+    #song-name {
+        font-size: 15px;
+    }
+
+    .volume-control i {
+        font-size: 15px;
+    }
+
+    #volume {
+        width: 80px;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+
+    <!-----font awesome icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <audio src="/music/Ek Baar Nahi Ye Dil Sau Baar Hai Toota_320(PagalWorld.com.so).mp3" controls id="music"></audio>
+    <div class="playlists togglePlaylist" id="playlist" >
+        <h2 id="title">Your PlayList</h2>
+        <ul>
+            <li class="song addClass" id="id0" onclick="songByChoice(this)">Ambarsariya</li>
+            <li class="song" id="id1" onclick="songByChoice(this)" id="click"> Ek Baar Nahi Ya Dil Sau Baar Hai Toota</li>
+            <li class="song" id="id2" onclick="songByChoice(this)">Nadaaniyan</li>
+            <li class="song" id="id3" onclick="songByChoice(this)">Sitam Humpe</li>
+            <li class="song" id="id4" onclick="songByChoice(this)">Tu Aayi Nai</li>
+            
+        </ul>
+    </div>
+
+    <div class="main">
+        <button id="bars" onclick="togglePlaylist()"><i class="fa fa-bars"></i></button>
+        <div class="music-element">
+
+            <div class="song-profile">
+                <h2 id="song-name">Ek Baar Nahi Ya Dil Sau Baar Hai Toota</h2>
+                <img src="https://i.ytimg.com/vi/waiB5mgjIo8/maxresdefault.jpg" alt="" id="song-img">
+            </div>
+
+            <input type="range" min="0" max="100" id="progress" value="0" step="1">
+            <div class="run-time">
+                <p id="current-time">0:0</p>
+                <p id="song-duration">3:45</p>
+            </div>
+            <div class="access-control">
+                <div class="media">
+                    <button onclick="back()"><i class="fa fa-step-backward"></i></button>
+                    <button id="play" onclick="togglePlay()"><i class="fa fa-play"></i></button>
+                    <button id="pause" onclick="togglePlay()"><i class="fa fa-pause"></i></button>
+                    <button><i class="fa fa-step-forward" onclick="next()"></i></button>
+
+                </div>
+                <div class="valume-control">
+                    <button id="volume-access">
+                        <i class="fa fa-volume-up" onclick="toggleMute()"></i>
+                    </button>
+                    <input type="range" min="0" max="1" step="0.1" id="c=volume" onchange="setVolume()" value="0.5">
+                    <button id="repeat" onclick="loop()"><i class="fa fa-repeat"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <script src="script.js"></script>
+</body>
+</html>
